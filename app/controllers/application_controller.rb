@@ -1,6 +1,16 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  # sign in 後のパス指定
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+
+  # sign out 後のパス指定
+  def after_sign_out_path_for(resource)
+    root_path
+  end
+
 
   protected
 
