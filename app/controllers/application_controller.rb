@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # sign up 時に name カラムにデータを保存することを許可する
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    # sign in の認証キーを email から name に変更するため，email も許可
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
   end
 end
