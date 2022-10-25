@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   # association
 
-
+  # active strage
+  has_one_attached :image
 end
