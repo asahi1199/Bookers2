@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # association
+  has_many: :books, dependent: :destroy
 
   # active strage
   has_one_attached :image
