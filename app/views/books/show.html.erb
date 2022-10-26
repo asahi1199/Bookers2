@@ -22,7 +22,13 @@
     <tr>画像・ユーザーリンク</tr>
     <tr><%= link_to @book.title, "/books/#{@book.id}" %> </tr>
     <tr><%= @book.body %></tr>
-    <tr><%= link_to "Edit", root_path %></tr>
-    <tr><%= link_to "Destroy", root_path, method: :delete %></tr>
+
+    <% if @book.user == current_user %>
+      <tr><%= link_to "Edit", edit_book_path(@book) %></tr>
+    <% end %>
+
+    <% if @book.user == current_user %>
+      <tr><%= link_to "Destroy", book_path(@book), method: :delete %></tr>
+    <% end %>
   </tbody>
 </table>
