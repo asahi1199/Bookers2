@@ -1,20 +1,5 @@
+<%= render 'user_info' %>
 <h1>User info</h1>
-
-<div>
-  <%= image_tag current_user.get_profile_image(100, 100) %>
-  <table>
-    <tbody>
-      <tr>
-        <td>name</td>
-        <td><%= current_user.name %></td>
-      </tr>
-      <tr>
-        <td>introduction</td>
-        <td><%= current_user.introduction %></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 <div>
   <!-- 自分のユーザー編集ページへリンク -->
