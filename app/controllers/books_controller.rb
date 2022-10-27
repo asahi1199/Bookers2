@@ -23,6 +23,10 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    # 他ユーザーが投稿した book の編集画面に遷移しない設定
+    if @book.user != current_user
+      redirect_to books_path
+    end
   end
 
   def update

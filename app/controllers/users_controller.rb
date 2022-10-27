@@ -14,6 +14,10 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    # 他ユーザーのユーザー編集へ遷移できないようにする設定
+    if @user != current_user
+      redirect_to user_path(current_user.id)
+    end
   end
 
   def update
