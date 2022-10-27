@@ -41,6 +41,8 @@
         </li>
       <% end %>
     </header>
+    <!-- flash message-->
+    <p><%= flash[:notice] %></p>
     <%= yield %>
   </body>
 </html>
