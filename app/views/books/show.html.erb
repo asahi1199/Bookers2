@@ -5,18 +5,7 @@
   <%= link_to "Edit User", edit_user_path(current_user.id) %>
 </div>
 
-<h1>New book</h1>
-
-<%= form_with model: Book.new() do |f| %>
-  <label>Title</label>
-  <%= f.text_field :title %>
-
-  <label>Opinion</label>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Create Book' %>
-<% end %>
-
+<%= render 'new_book', book: @new_book %>
 
 <h1>Book detail</h1>
 

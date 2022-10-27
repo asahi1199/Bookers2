@@ -18,6 +18,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    # 新規投稿用
+    @new_book = Book.new()
+
     @book = Book.find(params[:id])
   end
 
