@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   # sign in 後のパス指定
   def after_sign_in_path_for(resource)
-    root_path
+    user_path(current_user.id)
   end
 
   # sign out 後のパス指定
