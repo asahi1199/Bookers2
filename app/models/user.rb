@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   # validation
   validates :name, uniqueness: true, length: {minimum: 2, maximum: 20}
-  validates :introduction, length: {maximum: 200}
+  validates :introduction, length: {maximum: 50}
 
   # association
   has_many :books, dependent: :destroy
