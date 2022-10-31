@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'homes#top'
 
-  resources :books, only: [:create, :index, :show, :edit, :update, :destroy]
+  # コメントは book に対してされるため，book_comments は books に結びつく
+  resources :books, only: [:create, :index, :show, :edit, :update, :destroy] do
+    resources :book_comments, only: [:create, :destroy]
+  end
+
   resources :users, only: [:index, :show, :edit, :update]
 
   get 'home/about' => 'homes#about', as: 'about'
