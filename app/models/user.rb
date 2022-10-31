@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
   # association
   has_many :books, dependent: :destroy
+  has_many :book_comments, dependent: :destroy
 
   # active strage
   has_one_attached :profile_image
