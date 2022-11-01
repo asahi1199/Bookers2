@@ -73,8 +73,10 @@
 
   <div>
     <%= form_with model: [@book, @book_comment] do |f| %>
-      <%= f.text_area :comment, rows: '5', placeholder: 'Write your comment!!' %>
-      <%= f.submit 'Submit' %>
+      <div class="form-group">
+        <%= f.text_area :comment, rows: '5', placeholder: 'Write your comment!!', class: 'w-100' %>
+      </div>
+      <%= f.submit 'Submit'%>
     <% end %>
   </div>
 </div>
