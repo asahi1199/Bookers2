@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   # コメントは book に対してされるため，book_comments は books に結びつく
   resources :books, only: [:create, :index, :show, :edit, :update, :destroy] do
+    # singular にすると URL に id が含まれなくなる
+    # 1ユーザに対して1いいねしかできないため，destroy する際に favorite の id が必要ない
+    resource :favorites, only: [:create, :destroy]
     resources :book_comments, only: [:create, :destroy]
   end
 
